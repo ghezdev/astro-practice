@@ -1,5 +1,8 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Counter from '../components/CounterReact.jsx';
 ---
 
-<Counter client:load />
+<Layout title="React">
+  <Counter client:load />
+</Layout>

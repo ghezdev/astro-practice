@@ -1,30 +1,32 @@
-<script>
-export default {
-  // Properties returned from data() become reactive state
-  // and will be exposed on `this`.
-  data() {
-    return {
-      count: 0
-    }
-  },
+<script setup>
+import { ref, onMounted } from 'vue'
+import CheckBox from './CheckBox.vue'
 
-  // Methods are functions that mutate state and trigger updates.
-  // They can be bound as event listeners in templates.
-  methods: {
-    increment() {
-      this.count++
-    }
-  },
+// reactive state
+const count = ref(0)
 
-  // Lifecycle hooks are called at different stages
-  // of a component's lifecycle.
-  // This function will be called when the component is mounted.
-  mounted() {
-    console.log(`The initial count is ${this.count}.`)
-  }
+// functions that mutate state and trigger updates
+function increment() {
+  count.value++
 }
 </script>
 
 <template>
-  <button @click="increment">Count is: {{ count }}</button>
+  <div className="bg-red-500">
+    <p className="font-bold">Mapas</p>
+    <ul>
+      <CheckBox text="Mapa 1" />
+      <CheckBox text="Mapa 2" />
+      <CheckBox text="Mapa 3" />
+    </ul>
+    <!-- <p className="font-bold">Orden</p>
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+    </ul>
+    <p className="font-bold">Limite</p>
+    <input /> -->
+  </div>
 </template>
